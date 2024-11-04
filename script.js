@@ -1,41 +1,38 @@
+
 class Animal {
     constructor(species) {
-        this.species = species;
+        this._species = species; // Use a private property convention
     }
 
-    makeSound() { // Changed to a method
-        console.log("The", this.species, "makes a sound");
+    get species() {
+        return this._species; // Getter for species
+    }
+
+    makeSound() {
+        console.log(`The ${this.species} makes a sound`); // Log the sound
     }
 }
 
 class Cat extends Animal {
     constructor(species) {
-        super(species);
+        super(species); // Call the parent constructor
     }
 
     purr() {
-        console.log("purr");
+        console.log("purr"); // Log the purring sound
     }
 }
 
 class Dog extends Animal {
     constructor(species) {
-        super(species);
+        super(species); // Call the parent constructor
     }
 
     bark() {
-        console.log("woof");
+        console.log("woof"); // Log the barking sound
     }
 }
 
-// Example usage:
-const myCat = new Cat("Siamese");
-myCat.makeSound(); // Output: The Siamese makes a sound
-myCat.purr(); // Output: purr
-
-const myDog = new Dog("Golden Retriever");
-myDog.makeSound(); // Output: The Golden Retriever makes a sound
-myDog.bark(); // Output: woof
 
 
 // Do not change the code below this line
